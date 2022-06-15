@@ -5,6 +5,7 @@ import type {
   PartsStyleObject,
   SystemStyleObject,
 } from "@chakra-ui/theme-tools"
+import { colors } from "../colors"
 
 const baseStyle: PartsStyleObject<typeof parts> = {
   table: {
@@ -37,18 +38,17 @@ const numericStyles: SystemStyleObject = {
 }
 
 const variantSimple: PartsStyleFunction<typeof parts> = (props) => {
-  const { colorScheme: c } = props
 
   return {
     th: {
       color: mode("gray.600", "gray.400")(props),
       borderBottom: "1px",
-      borderColor: mode(`${c}.100`, `${c}.700`)(props),
+      borderColor: mode(colors.borderLight, colors.borderDark)(props),
       ...numericStyles,
     },
     td: {
       borderBottom: "1px",
-      borderColor: mode(`${c}.100`, `${c}.700`)(props),
+      borderColor: mode(colors.borderLight, colors.borderDark)(props),
       ...numericStyles,
     },
     caption: {
