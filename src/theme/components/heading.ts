@@ -1,18 +1,19 @@
-import { SystemStyleObject, SystemStyleFunction } from '@chakra-ui/theme-tools';
-import useThemeColor from '../../hooks/useThemeColor';
+import {
+  mode,
+  SystemStyleFunction,
+  SystemStyleObject,
+} from '@chakra-ui/theme-tools';
+import { colors } from '../colors';
 
-const baseStyle: SystemStyleFunction = (props) => {
-  const { getTextColor, getPrimaryColor, getInverseTextColor } =
-    useThemeColor();
-
+const baseStyle: SystemStyleFunction = props => {
   return {
     fontFamily: 'heading',
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    color: getTextColor(props),
+    color: mode(colors.neutralDarkest, colors.neutralLightest)(props),
     _selection: {
-      bg: getPrimaryColor(props),
-      color: getInverseTextColor(props),
+      bg: mode(colors.primary[300], colors.primary[300])(props),
+      color: mode(colors.neutralLightest, colors.neutralDarkest)(props),
     },
   };
 };

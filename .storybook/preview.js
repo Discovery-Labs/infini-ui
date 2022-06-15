@@ -1,11 +1,11 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import * as React from 'react';
-import theme from '../src/theme';
+import { customTheme } from '../src/theme';
 import '@fontsource/inter';
 
 const withChakra = StoryFn => {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={customTheme}>
       <StoryFn />
     </ChakraProvider>
   );

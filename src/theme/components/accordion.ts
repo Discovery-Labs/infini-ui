@@ -19,9 +19,6 @@ const baseStyleButton: SystemStyleObject = {
   _focus: {
     boxShadow: 'none',
   },
-  _hover: {
-    bg: 'blackAlpha.50',
-  },
   _disabled: {
     opacity: 0.4,
     cursor: 'not-allowed',
